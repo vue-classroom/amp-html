@@ -29,8 +29,11 @@ function receiveMessage(event)
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
      */
     var disqus_config = function () {
-        this.page.url = window.location;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = window.location.hash; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        var parts = window.location.hash.split('#');
+        if (parts.length == 3) {
+          this.page.url = parts[2];
+          this.page.identifier = parts[1];
+        }
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
