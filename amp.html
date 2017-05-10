@@ -32,7 +32,9 @@ function receiveMessage(event)
         var parts = window.location.hash.split('#');
         if (parts.length == 3) {
           this.page.url = parts[2];
+          console.log("pageurl" + this.page.url);
           this.page.identifier = parts[1];
+            console.log("identifier" + this.page.identifier);
         }
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
